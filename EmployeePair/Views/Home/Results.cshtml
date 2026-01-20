@@ -1,0 +1,34 @@
+﻿@model ResultsViewModel
+
+<div class="container mt-5">
+    <h2 class="mb-4">Employees with the Longest Shared Time</h2>
+
+    <div class="alert alert-info">
+        <strong>Employee #1:</strong> @Model.Emp1 <br />
+        <strong>Employee #2:</strong> @Model.Emp2
+    </div>
+
+    <table class="table table-striped table-bordered shadow-sm">
+        <thead class="table-dark">
+            <tr>
+                <th>Employee #1</th>
+                <th>Employee #2</th>
+                <th>Project</th>
+                <th>Days Worked</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var p in Model.Projects)
+            {
+                <tr>
+                    <td>@p.EmpId1</td>
+                    <td>@p.EmpId2</td>
+                    <td>@p.ProjectId</td>
+                    <td>@p.DaysWorked</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <a href="/" class="btn btn-secondary mt-3">Upload Another File</a>
+</div>

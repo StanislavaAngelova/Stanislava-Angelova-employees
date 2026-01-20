@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "Upload CSV";
+}
+
+<div class="container mt-5">
+    <h2 class="mb-4">Upload CSV File</h2>
+
+    <button class="btn btn-outline-info mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#csvInfo">
+        Show CSV Format Instructions
+    </button>
+
+    <div class="collapse" id="csvInfo">
+        <div class="alert alert-info">
+            <h5 class="mb-2">CSV Format Requirements</h5>
+            <p class="mb-1">Your CSV file must contain <strong>four columns</strong> in the following order:</p>
+            <ul class="mb-2">
+                <li><strong>EmpID</strong> – Employee ID (number)</li>
+                <li><strong>ProjectID</strong> – Project ID (number)</li>
+                <li><strong>DateFrom</strong> – Start date</li>
+                <li><strong>DateTo</strong> – End date or <strong>NULL</strong> if still working</li>
+            </ul>
+            <p class="mb-1">Example:</p>
+            <pre class="bg-light p-3 border rounded">
+EmpID, ProjectID, DateFrom, DateTo
+143, 12, 2013-11-01, 2014-01-05
+218, 10, 2012-05-16, NULL
+143, 10, 2009-01-01, 2011-04-27
+        </pre>
+            <p class="mb-0">
+                Supported date formats include: <strong>yyyy-MM-dd</strong>, <strong>dd-MM-yyyy</strong>,
+                <strong>MM/dd/yyyy</strong>, <strong>dd.MM.yyyy</strong>, and more.
+            </p>
+        </div>
+    </div>
+    <form asp-action="Upload" method="post" enctype="multipart/form-data" class="card p-3 shadow-sm mt-3" style="width: 50%;">
+        <div class="mb-2">
+            <input type="file" name="file" accept=".csv" class="form-control form-control-sm" />
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-sm w-100">Process</button>
+    </form>
+
+    @if (ViewBag.Error != null)
+    {
+        <div class="alert alert-danger mt-3">@ViewBag.Error</div>
+    }
+</div>
