@@ -1,4 +1,4 @@
-Stanislava-Angelova-employees
+Stanislava-Angelova-employees  
 This ASP.NET Core MVC application calculates which two employees have worked together on common projects for the longest total time.  
 It includes CSV upload, full validation, clean error reporting, and a user-friendly interface.
 
