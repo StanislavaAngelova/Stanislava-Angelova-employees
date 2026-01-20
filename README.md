@@ -31,6 +31,7 @@ Use the upload form on the home page to select a CSV file.
 The application will validate the file and display the results.
 
 # Technologies Used
+- Visual Studio
 - ASP.NET Core MVC
 - C#
 - Bootstrap 5
