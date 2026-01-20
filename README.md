@@ -1,10 +1,10 @@
 # Stanislava-Angelova-employees
 This ASP.NET Core MVC application calculates which two employees have worked together on common projects for the longest total time.
-It includes CSV upload, full validation, clean error reporting, and a user-friendly interface.
+It includes CSV upload, validation, clean error reporting, and a user-friendly interface.
 
 # Features
 - Upload a CSV file containing employee project assignments
-- Full validation of:
+- Validation of:
 	- Missing columns
 	- Invalid dates
 	- Overlapping project periods
@@ -24,7 +24,6 @@ Your CSV file must follow this structure:
 **Rules:**
 - DateFrom and DateTo must be valid dates
 - Use NULL in DateTo for employees still working on a project
-- The application validates all rows before processing
 
 **Uploading a CSV File**
 Use the upload form on the home page to select a CSV file.
